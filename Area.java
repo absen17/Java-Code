@@ -3,7 +3,6 @@ public class Area {
 
         Circle c = new Circle(5);
         System.out.println("Area is : "+c.area());
-     
 
         Circle c1 = Shape.createCircle(10);
         System.out.println("Area of Circle is : "+c1.area());
