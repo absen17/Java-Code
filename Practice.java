@@ -8,6 +8,6 @@ public class Practice {
     public static void main(String args[]) {
 
         Practice obj = new Practice();
-        System.out.println(obj.getSum());
+        System.out.println(obj.getSum());// compilation error
     }
 }
