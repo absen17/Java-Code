@@ -6,8 +6,11 @@ public class Practice {
     }
 
     public static void main(String args[]) {
-
+        try {
         Practice obj = new Practice();
-        System.out.println(obj.getSum());// compilation error
+        System.out.println(obj.getSum(2,3));// compilation error
+        } catch (Exception e) {
+            System.out.println("Something went wrong.");
+        }
     }
 }
