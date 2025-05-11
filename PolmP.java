@@ -1,4 +1,7 @@
 class A {
+    public static final char[] area = null;
+    public static char[] a1;
+
     public void show() {
         System.out.println("in A show");
     }
