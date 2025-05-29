@@ -6,7 +6,8 @@ import java.util.List;
 public class DemoComparator2 {
     public static void main(String[] args) {
 
-        Comparator<String> com = (a,b)->a.length()>b.length()?1:-1;
+        Comparator<String> com = (a,b)
+                            ->a.length()>b.length()?1:-1;
         
         List<String> name = new ArrayList<>();
 
