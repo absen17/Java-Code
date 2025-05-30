@@ -1,17 +1,17 @@
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Stream;
 
 public class DemoOfStreamAPI {
     public static void main(String[] args) {
 
-        List<Integer> nums = Arrays.asList(8,3, 2, 5, 4, 6);
+        List<Integer> nums = Arrays.asList(1,8,3, 2, 5, 4, 6);
 
-        nums.stream()
+        int result = nums.stream()
             .filter(n->n%2!=0)
             .sorted()
             .map(n->n*2)
-            .forEach(n->System.out.print(n+ " "));
+            .reduce(0,(a,b)->a+b);
+        System.out.println(result);
 
         // long data = nums.stream().count();
         // System.out.println(stream);
