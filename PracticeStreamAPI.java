@@ -1,6 +1,8 @@
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
@@ -76,7 +78,50 @@ public class PracticeStreamAPI {
                                    .collect(Collectors.toSet());
         System.out.println(collect);
 
-        
+        //reduce
+        List<Integer> num7 = Arrays.asList(11,22,25,33,35,41);
+        int result1 = num7.stream().reduce(0,(a,b)->a+b);
+        System.out.println(result1);
+
+        //allmatch /nonematch /anymatch
+        List<Integer> list = Arrays.asList(1,12,4,5,1);
+        boolean re = list.stream().noneMatch(n->n>10);
+        System.out.println(re);
+
+        //findfirst / findany
+        List<String> name8 = Arrays.asList("appple","apple", "banana", "cherry","pine");
+        Optional<String> findFirst = name8.stream()
+                                        .filter(n->n.startsWith("a"))
+                                        .findAny();
+        System.out.println(findFirst);
+
+        //max min
+        Optional<Integer> r1 = list.stream().min((a,b)->a.compareTo(b));
+        System.out.println(r1);
+
+        // to Array
+        String[] arr = name8.stream().toArray(n->new String[n]);
+        for(String a: arr){
+            System.out.print(a + " ");
+        }
+
+        System.out.println();
+
+        //joining
+        String joiningResult = name8.stream()
+                .collect(Collectors.joining(" ","{",")"));
+        System.out.println(joiningResult);
+
+        //grouping By
+        // List<Per> person = Arrays.asList(
+        //     new Per("Ram", "India"),
+        //     new Per("Shyam", "Srilanka"),
+        //     new Per("Jodu", "Nepal")
+        // );
+        // Map<String, List<Per>> grpResult = person.stream()
+        //                                 .collect(
+        //                         Collectors.groupingBy(Per::)
+        //                                         );
 
     }
 }
