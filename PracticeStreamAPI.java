@@ -1,6 +1,7 @@
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -25,7 +26,7 @@ public class PracticeStreamAPI {
                                         (Arrays.asList("one","two"),
                                         Arrays.asList("three", "four"));
         List<String> r = listOfLists.stream().flatMap(n->n.stream()).collect(Collectors.toList());
-        System.out.println(r);
+        System.out.println("Flatmap : "+ r);
 
         //distinct
         List<Integer> num1 = Arrays.asList(1,2,2,3,3,4);
@@ -46,7 +47,7 @@ public class PracticeStreamAPI {
                                  .peek(n->System.out.println("Original : "+n))
                                  .map(n->n.toUpperCase())
                                  .collect(Collectors.toList());
-        System.out.println(peek);
+        System.out.println("Peek : "+peek);
 
         //limit
         List<Integer> num3 = Arrays.asList(1,2,2,3,3,4);
@@ -111,15 +112,10 @@ public class PracticeStreamAPI {
         System.out.println(joiningResult);
 
         //grouping By
-        // List<Per> person = Arrays.asList(
-        //     new Per("Ram", "India"),
-        //     new Per("Shyam", "Srilanka"),
-        //     new Per("Jodu", "Nepal")
-        // );
-        // Map<String, List<Per>> grpResult = person.stream()
-        //                                 .collect(
-        //                         Collectors.groupingBy(Per::)
-        //                                         );
+        List<String> grp = Arrays.asList("apple","banana","cherry","date");
+        Map<Integer,Long> grpLength = grp.stream()
+            .collect(Collectors.groupingBy(n->n.length(),Collectors.counting()));
+        System.out.println(grpLength);
 
     }
 }
