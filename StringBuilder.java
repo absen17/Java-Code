@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class StringBuilder {
+class StringBuilder1 {
 
     public static void main(String[] args) {
 

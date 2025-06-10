@@ -8,11 +8,12 @@ final class Calc {
     }
 }
 
-class AdCal extends Calc{
-    public void show(){
-        System.out.println("in AdCal show");
-    }
-}
+// class AdCal extends Calc{
+//     public void show(){
+//         System.out.println("in AdCal show");
+//     }
+// }
+HashMap
 
 public class KeywrdFin {
     public static void main(String[] args) {
