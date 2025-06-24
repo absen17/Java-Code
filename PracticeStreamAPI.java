@@ -54,7 +54,7 @@ public class PracticeStreamAPI {
         List<Integer> limit = num3.stream()
                                 .limit(3)
                                 .collect(Collectors.toList());
-        System.out.println(limit);
+        System.out.println("limit : "+limit);
 
         //skip
         List<Integer> num4 = Arrays.asList(1,2,2,3,3,4);
